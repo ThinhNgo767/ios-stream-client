@@ -3,7 +3,7 @@ import { useState, useRef, useCallback } from "react";
 
 import AnchorSelect from "../../component/AnchorSelect/AnchorSelect";
 import { useFetchData } from "../../hook/useFetchData";
-import CustomDetails from "../../component/CustomDetails/CustomDetails";
+
 import videoAPI from "../../apis/videoAPI";
 import poster from "../../assets/greenneon.webp";
 
@@ -32,7 +32,6 @@ import Swal from "sweetalert2";
 
 export default function KoreanDance({ isVisible }) {
   const [page, setPage] = useState(1);
-  const [anchors, setAnchors] = useState("");
   const [selected, setSelected] = useState([]);
 
   const query = selected.map((s) => s.label).toString();
@@ -51,9 +50,7 @@ export default function KoreanDance({ isVisible }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [loading, setLoading] = useState(false); // State quản lý loading
   const [isShowNsfw, setIsShowNsfw] = useState(true);
-  const [isOpen, setIsOpen] = useState(false);
   const [isLoop, setIsLoop] = useState(false);
-  const [indexAchor, setIndexAchor] = useState(null);
 
   const videoRef = useRef(null);
   const itemsRef = useRef(new Map());
@@ -97,12 +94,6 @@ export default function KoreanDance({ isVisible }) {
   const seek = useCallback((amount) => {
     if (videoRef.current) videoRef.current.currentTime += amount;
   }, []);
-
-  const handleSelectAnchor = (idx, anchor) => {
-    setAnchors(anchor);
-    setIndexAchor(idx);
-    setIsOpen(false);
-  };
 
   if (isLoading) {
     return <div className="loading-global">Đang tải dữ liệu từ server...</div>;

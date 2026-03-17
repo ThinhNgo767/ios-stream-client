@@ -1,5 +1,5 @@
 import "./InactivityModal.css";
-import { session } from "../../utils/sessionStorageUtils";
+
 import AuthContext from "../../contexts/AuthContext/AuthContext";
 import ActiveContext from "../../contexts/ActiveContext/ActiveContext";
 

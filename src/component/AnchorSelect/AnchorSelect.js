@@ -1,6 +1,5 @@
 import "./AnchorSelect.css";
 
-import React, { useState } from "react";
 import Select from "react-select";
 
 const AnchorSelect = ({ anchorList, selected, setSelected }) => {
