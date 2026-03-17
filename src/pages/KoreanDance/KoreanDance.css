@@ -1,0 +1,358 @@
+media-controller {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4/3;
+}
+.kbj-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.kbj-container .video-box {
+  width: 100%;
+  height: fit-content;
+  aspect-ratio: 4/3;
+  position: relative;
+  background: #000;
+}
+.kbj-container .loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Làm mờ nền video */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 11; /* Đảm bảo nằm trên thẻ video */
+  color: #fff;
+  pointer-events: none; /* Để không cản trở việc nhấn nút Play */
+}
+
+/* Hiệu ứng xoay tròn cho Spinner */
+.kbj-container .spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #fc730f;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+.kbj-container span.loading {
+  display: inline-block;
+  font-size: 1rem;
+  color: #f3f3f3;
+  letter-spacing: 2px;
+}
+.kbj-container span.loading > strong:nth-child(even) {
+  color: #fc730f;
+}
+.kbj-container .switch-box > button > span.active-loop {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.kbj-container .nsfw-go_video {
+  width: calc(100% - 10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+.kbj-container .content-nsfw,
+.kbj-container .go-video-is-playing,
+.kbj-container .switch-box {
+  width: calc(30%);
+  display: grid;
+  place-items: center;
+  flex: 1;
+}
+
+.kbj-container .content-nsfw > button,
+.kbj-container .go-video-is-playing > button,
+.kbj-container .switch-box > button {
+  width: 95%;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  height: 1.8rem;
+  border: thin solid #222;
+  border-radius: 3px;
+  background-color: #333;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0 8px;
+}
+
+.kbj-container .filter-blur-hide {
+  filter: blur(10px);
+}
+.kbj-container .filter-blur-show {
+  filter: blur(0px);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.kbj-container .item-box {
+  width: calc(80% - 10px);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  margin: 0 auto;
+}
+
+.kbj-container .control-box {
+  width: calc(100% - 20px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.kbj-container .control-box .box-left,
+.kbj-container .control-box .box-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  border-radius: 5px;
+  border: thin solid #333;
+}
+.kbj-container .box-left button,
+.kbj-container .box-right button {
+  background-color: #333;
+  border: none;
+  color: #f3f3f3;
+  flex: 1 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1;
+  height: 2rem;
+}
+.kbj-container .box-left button:nth-child(1),
+.kbj-container .box-right button:nth-child(1) {
+  border-radius: 5px 0 0 5px;
+}
+.kbj-container .box-left button:nth-child(3),
+.kbj-container .box-right button:nth-child(3) {
+  border-radius: 0 5px 5px 0;
+}
+.kbj-container .box-left button:nth-child(2),
+.kbj-container .box-left button:nth-child(3),
+.kbj-container .box-right button:nth-child(2),
+.kbj-container .box-right button:nth-child(3) {
+  border-left: thin solid #222;
+}
+
+.kbj-container .custom-details-content .anchor-name {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.kbj-container .custom-details-content .anchor-name > small {
+  padding: 5px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  line-height: 1;
+}
+.kbj-container .custom-details-content .anchor-name > small:hover {
+  background-color: #75921e;
+}
+.kbj-container .custom-details-content .anchor-name > small.active {
+  background-color: #75921e;
+}
+
+.kbj-container .anchor-name > small.all-anchor {
+  padding: 4px 10px;
+  background-color: #fff;
+  color: #333;
+  border: thin solid #333;
+  box-shadow:
+    3px 3px 3px #333,
+    -3px 1px 3px #333;
+}
+.kbj-container .anchor-name > small.all-anchor:hover {
+  background-color: #f5f5f5;
+  color: #333;
+  border-color: #333;
+}
+
+.kbj-container .load-more-trigger {
+  width: 100%;
+  height: 20px;
+  margin-top: 20px;
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+}
+.kbj-container button.scroll-top {
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: thin solid #656565;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #3c3c3c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+.kbj-container button.scroll-top:hover {
+  background-color: #f3f3f3;
+}
+.kbj-container button.scroll-top > small {
+  font-size: 0.6rem;
+}
+
+.card-kbj {
+  position: relative;
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden; /* Cắt phần gradient thừa bên ngoài */
+  padding: 3.5px; /* Khoảng cách này chính là độ dày border khi active */
+  transition: 0.3s;
+}
+
+/* Lớp chứa nội dung thực tế */
+.card-kbj-content {
+  position: relative;
+  z-index: 10; /* Đẩy nội dung lên trên lớp border */
+  background: #252525;
+  border-radius: 8px;
+  text-align: center;
+  height: 100%;
+}
+
+.card-kbj-content img {
+  width: 100%;
+  height: 80%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+}
+
+.card-kbj-content p {
+  height: 20%;
+  text-align: center;
+  align-content: center;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  color: #f3f3f3;
+}
+
+/* HIỆU ỨNG KHI ACTIVE */
+.card-kbj.active::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(transparent, #fc730f, #00dfc4, transparent 30%);
+  animation: rotate 4s linear infinite;
+  z-index: 1;
+}
+
+/* Thêm một lớp phủ mờ phía sau để tạo hiệu ứng Glow (tùy chọn) */
+.card-kbj.active::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: #1a1a1a;
+  border-radius: 12px;
+  z-index: 2;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hiệu ứng hover cho card chưa active */
+.card-kbj:not(.active):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.kbj-container .pagination {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.kbj-container .pagination > button,
+.kbj-container .pagination > span {
+  flex: 1;
+  height: 100%;
+}
+.kbj-container .pagination > button {
+  background-color: #333;
+  color: #fff;
+  border: thin solid #fff;
+}
+.kbj-container .pagination > span {
+  background-color: #fff;
+  display: grid;
+  place-items: center;
+}
+
+@media (max-width: 850px) {
+  .kbj-container .video-box video {
+    width: 100%;
+    height: 100%;
+  }
+  .kbj-container .item-box {
+    width: calc(100% - 20px);
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .kbj-container button:active {
+    transform: scale(0.9);
+  }
+  .kbj-container button:hover {
+    background-color: #fff;
+    color: #333;
+  }
+  .kbj-container .content-nsfw > button:hover,
+  .kbj-container .go-video-is-playing > button:hover {
+    background-color: #fff;
+    color: #333;
+  }
+}

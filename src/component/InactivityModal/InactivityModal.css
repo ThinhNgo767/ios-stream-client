@@ -1,0 +1,129 @@
+.inactivity-modal-overlay {
+  position: fixed; /* Che phủ toàn bộ viewport */
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  background-image: url("../../../public/wallpaper.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 1000; /* Đảm bảo modal nằm trên cùng */
+}
+
+.inactivity-modal-content {
+  background-color: transparent;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 90%; /* Đảm bảo responsive */
+}
+.content-inactivity {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.content-inactivity > p:first-child {
+  font-size: 1.3rem;
+}
+.content-inactivity > p:last-child {
+  font-size: 0.9rem;
+}
+
+.content-inactivity-form,
+.content-inactivity-error {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.content-inactivity-error {
+  background-color: rgba(255, 0, 0, 0.3);
+  height: 300px;
+}
+.inactivity-modal-content .content-inactivity-error > p {
+  width: 80%;
+}
+.inactivity-modal-content h2 {
+  margin-top: 0;
+  color: #1f290a;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+}
+.inactivity-modal-content h2.notice {
+  text-align: left;
+}
+
+.inactivity-modal-content p {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #1f290a;
+  margin: 0;
+}
+.inactivity-modal-content input {
+  width: 100%;
+  padding: 0;
+  height: 3rem;
+  text-align: center;
+  border: none;
+  outline: none;
+  color: #1f290a;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  background-color: #333;
+  color: #fff;
+}
+.inactivity-modal-content input:focus {
+  background-color: #222;
+}
+
+.inactivity-modal-content button {
+  width: 100%;
+  height: 3rem;
+  border: 1px solid #222;
+  color: #fff;
+  background-color: #333;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+span.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: calc(100% - 20px);
+  color: #222;
+  margin-bottom: 0.5rem;
+  background: rgba(255, 0, 0, 0.3);
+  padding: 5px 10px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+@media (max-width: 850px) {
+  .inactivity-modal-content {
+    width: calc(90% - 30px);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "_id": {
+      "$oid": "685575fa06827f55e89e62a9"
+    },
+    "userId": 1,
+    "password": "$2b$10$PyIV1S4n9t/DzafL.B8cruARaaB3EI7WWjQdSdDntDCibpDR2JiBC",
+    "username": "thinh767",
+    "fullname": "Final Boss",
+    "infomation": {
+      "avatar": "https://pub-5ad36778bf3b4419b4b18cbfe6433aff.r2.dev/1751608387471-photo_2025-07-04_12-06-56.jpg",
+      "membership": {
+        "isVip": true,
+        "startDate": "2025-08-19T07:03:27.000Z",
+        "expirationDate": "2026-08-19T07:03:27.000Z"
+      },
+      "email": "thinhngo@ksc88.net",
+      "date_of_birth": {
+        "day": "20",
+        "month": "09",
+        "year": "1988"
+      },
+      "gender": "male",
+      "phone": "0888677787",
+      "address": "Hẻm 517 ,Bùi Hữu Nghĩa - TP Biên Hòa",
+      "security_code": "$2b$10$ikMtrZg/Hb5gXCtuZBQ0xuRf8WfjRSFYnq1DmO63wJwWCB2OPLXjy",
+      "role": "super_root",
+      "key": "$2b$10$ksRRzJQ58Gv1HwdbcaWf..7HiuPqOVbF3OZD2W3bAyN0dEuALB5PG"
+    },
+
+    "createdAt": {
+      "$date": "2025-06-20T06:38:31.722Z"
+    },
+
+    "status": true,
+    "isActive": true,
+    "tokenVersion": 0,
+    "resetToken": "c8913122e60ac05c838c0881e85de3e042c2994b51fa1cec4c263fd74c5de6e4",
+    "resetTokenExpiresAt": {
+      "$date": "2025-08-11T09:52:56.332Z"
+    },
+    "resetTokenRequestedAt": {
+      "$date": "2025-08-11T09:42:56.331Z"
+    }
+  }
+]

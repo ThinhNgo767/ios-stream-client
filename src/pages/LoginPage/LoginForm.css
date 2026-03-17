@@ -1,0 +1,162 @@
+.container-login {
+  font-family: "Reem Kufi", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 95dvh;
+  background-color: #fff;
+  color: #333;
+}
+
+.container-login .box {
+  position: relative;
+  width: 380px;
+  height: 420px;
+  background: #d6d6d6;
+  transition: 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.192);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: auto; /* Thêm để căn giữa nếu cần */
+}
+
+/* Giữ nguyên các phần ::before, ::after và keyframes animate từ file cũ của bạn */
+.container-login .box::before,
+.container-login .box::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, var(--primaryColor), #333);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+
+.container-login .box::after {
+  animation-delay: -3s;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.container-login .form {
+  position: absolute;
+  inset: 2px;
+  border-radius: 8px;
+  background: #ffffff;
+  z-index: 10;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+}
+.container-login .form h2 {
+  color: var(--primaryColor);
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+.container-login .inputBox {
+  position: relative;
+  width: 300px;
+  margin-top: 35px;
+}
+.container-login .inputBox input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 1em;
+  letter-spacing: 0.15em;
+  z-index: 10;
+}
+.container-login .inputBox span {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  padding: 20px 0px 10px;
+  font-size: 1em;
+  color: #8f8f8f;
+  pointer-events: none;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+}
+.container-login .inputBox input:valid ~ span,
+.container-login .inputBox input:focus ~ span {
+  color: var(--primaryColor);
+  transform: translateX(0px) translateY(-34px);
+  font-size: 0.75em;
+}
+.container-login .inputBox input:valid ~ p,
+.container-login .inputBox input:focus ~ p {
+  color: #fff;
+}
+.container-login .inputBox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primaryColor);
+  border-radius: 4px;
+  transition: 0.5s;
+  pointer-events: none;
+}
+.container-login .inputBox input:valid ~ i,
+.container-login .inputBox input:focus ~ i {
+  height: 40px;
+}
+.container-login .inputBox .hiddenShow {
+  position: absolute;
+  right: 3%;
+  bottom: 0%;
+  background-color: transparent;
+  border: none;
+  font-size: 1.4rem;
+  padding: 0 5px;
+  z-index: 10;
+}
+.container-login .submitBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.container-login button[type="submit"] {
+  font-family: "Reem Kufi", sans-serif;
+  border: none;
+  outline: none;
+  background: var(--primaryColor);
+  color: white;
+  padding: 11px 25px;
+  width: max-content;
+  margin-top: 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 5px;
+}
+.container-login button[type="submit"]:active {
+  opacity: 0.8;
+}
+.container-login #signIn {
+  position: absolute;
+  top: 45px;
+  transition: 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+@media (max-width: 850px) {
+  .container-login button[type="submit"] {
+    font-size: 1rem;
+  }
+}

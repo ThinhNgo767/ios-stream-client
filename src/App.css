@@ -1,0 +1,13 @@
+media-play-button {
+  height: 100%;
+  padding: 0 5px;
+}
+
+.loading-global {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
