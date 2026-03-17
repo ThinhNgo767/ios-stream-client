@@ -90,6 +90,10 @@ export default function KoreanDance({ isVisible }) {
       console.log(error.message);
     }
   };
+  const onSelected = (val) => {
+    setSelected(val);
+    setPage(1);
+  };
 
   const seek = useCallback((amount) => {
     if (videoRef.current) videoRef.current.currentTime += amount;
@@ -251,7 +255,7 @@ export default function KoreanDance({ isVisible }) {
       <AnchorSelect
         anchorList={anchorsName}
         selected={selected}
-        setSelected={setSelected}
+        setSelected={onSelected}
       />
       {isFetching ? (
         <div
